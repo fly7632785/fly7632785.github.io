@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.4.0 -->
+    <script>window.materialVersion = "1.4.0"</script>
+
+    <!-- Title -->
+    
+    <title>
+        
+            Android MPAndroidChart 自适应Markerview | 
+        
+        Jafir&#39;s blog
+    </title>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+    
+        <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+    
+    
+    
+    
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Jafir">
+    <meta name="description" itemprop="description" content="what can&#39;t kill you makes you stronger">
+    <meta name="keywords" content=",android">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/avatar_corner.png">
+    <link rel="icon" sizes="192x192" href="/img/avatar_corner.png">
+    <link rel="apple-touch-icon" href="/img/avatar_corner.png">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Jafir&#39;s blog">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://fly7632785.github.io">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Android MPAndroidChart 自适应Markerview | Jafir&#39;s blog">
+    <meta property="og:image" content="/img/avatar_corner.png" />
+    <meta property="og:description" content="what can&#39;t kill you makes you stronger">
+    <meta property="og:article:tag" content="android"> 
+
+    
+        <meta property="article:published_time" content="Jan 21, 2018" />
+        <meta property="article:modified_time" content="Mar 13, 2018" />
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="Android MPAndroidChart 自适应Markerview | Jafir&#39;s blog">
+    <meta name="twitter:description" content="what can&#39;t kill you makes you stronger">
+    <meta name="twitter:image" content="/img/avatar_corner.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="http://fly7632785.github.io" />
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://fly7632785.github.io/2018/01/21/android-MPAndroidChart-自适应Markerview/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Jafir&#39;s blog",
+        "logo": "/img/avatar_corner.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Jafir",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar_corner.png"
+        },
+        "description": "Hi, welcome to Jafir's blog !,I will share something nice with you !"
+    },
+    "headline": "Android MPAndroidChart 自适应Markerview",
+    "url": "http://fly7632785.github.io/2018/01/21/android-MPAndroidChart-自适应Markerview/index.html",
+    "datePublished": "Jan 21, 2018",
+    "dateModified": "Mar 13, 2018",
+    "description": "what can&#39;t kill you makes you stronger",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://fly7632785.github.io"
+    }
+}
+</script>
+
+
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.en.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+materialVersion+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(data&&data.indexOf(versionString)===-1){lsloader.removeLS(key)}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload){cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}code=code.split(versionString)[1];if(/\.js?.+$/.test(versionNumber)){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload)}};lsloader.requestResource=function(name,path,cssonload){var that=this;if(/\.js?.+$/.test(path)){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else if(/\.css?.+$/.test(path)){this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import CSS & jQuery -->
+    
+        <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?oCSEO3ST+aEypEwttTDI9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        
+        
+            <style>
+    
+    
+    
+    
+    
+    
+    
+    .footer-sns-github {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNCA3OGMtNi40IDEuNC0yNi40IDE0LjItMzYgMjIuOC04IDcuMi0yMiAyOS44LTI0LjQgMzkuMi0xLjYgNi40LTIgMTEzLjItMS42IDM2OCAuNiAyOTkuNCAxIDM1OS44IDMuNCAzNjQgMTEgMjAuMiAyMS42IDMyLjQgMzcuMiA0MyAxNS42IDEwLjYgMTcuMiAxMS4yIDM0LjIgMTMuMiAxMC42IDEuMiA2My40IDEuNiAxMjcuNiAxLjRsMTA5LjYtLjYgNi02LjggNi4yLTYuOC0xLjItMjUuMmMtLjgtMTUuOC0uMi0zMy40IDEuNC00Ny4yIDMtMjUuNCAxLjQtMzYuMi02LTQzLjItNS00LjYtNi4yLTQuOC0zMC42LTQuMi0yNy42LjgtMjQgMS42LTY4LjgtMTYtOC42LTMuNC0yMi42LTE4LTI4LjQtMjkuOC0xMS40LTIyLjgtMjctNDUtMzkuMi01NS42LTE0LTEyLjItMTkuOC0yMC44LTE5LjgtMjguNiAwLTExLjYgMTMuNi0xMi42IDMzLjItMi40IDE2LjYgOC44IDIwLjggMTIuNCA0MC44IDM2LjIgMjQuMiAyOC42IDMxIDMzLjYgNTQgMzkuNiAxNS4yIDQgNDIuMiAzIDUxLjQtMS44IDktNC42IDE4LTE1LjIgMjQuNC0yOS4yIDExLjQtMjQuMiA3LjQtMzEuMi0yMC42LTM2LjgtOS44LTItMjkuMi04LTQzLjQtMTMuNC00MC40LTE1LjgtNjQuNi0zNy40LTg1LjQtNzYuMi0xMS42LTIxLjgtMTUuNC0zMy0xOC4yLTUzLjYtNC4yLTMyLjItNC44LTYwLjItMS40LTg0IDMuNC0yMy44IDYuOC0zMi44IDIwLjItNTQgNC02IDguOC0xNS42IDExLTIxLjQgMy44LTEwIDMuOC0xMS42IDEtMzAtNS4yLTM0LjItMy4yLTUyLjQgNy42LTcwLjIgNy4yLTEyLjIgMTUtMTcuMiAyNC4yLTE1LjggMTIuOCAyLjIgNTIgMTcuNCA2Ni44IDI2LjIgMjYgMTUgMjkgMTUuNCA4Mi40IDcuMiAyNC42LTMuOCAzMy44LTQuMiA2MC0zLjIgMTcgLjYgNDEuNCAzIDU0IDUuMiAzOC40IDYuNiA0OS42IDUuMiA3My0xMCA2LjYtNC4yIDE3LjQtOS40IDI0LTExLjYgNi42LTIuMiAxNi01LjggMjEtOC4yIDEzLTYgMjgtNS42IDM1LjYuOCAxMi40IDEwLjQgMTguNiA0MS40IDE0LjQgNzEuNi00LjQgMzAuNi0zIDM5LjQgOC40IDUzLjggMy40IDQuNCAxMS4yIDE5LjIgMTcuNCAzMy4yTDc3NSA0NDN2NzhsLTEwIDI4Yy0xNS4yIDQzLjItMzYuOCA3My4yLTY2LjIgOTIuOC0xMy40IDguOC01NyAyNS40LTc2LjggMjktMjguMiA1LjItMzMuMiAxMi42LTIyIDMyLjIgMTEuMiAxOS40IDEyLjQgMzIuOCAxMS42IDEyOS42bC0uNiA4NS44IDUuNCA0LjZjMy42IDMgOS4yIDUuMiAxNiA2IDUuOC44IDYwLjIgMSAxMjAuNi42IDEwOC40LS42IDExMC4yLS42IDExOS01IDI0LTExLjYgNDAtMjcuNCA1MS42LTUwLjZsNS40LTExIC42LTM0N2MuNC0yMjMtLjItMzUzLjQtMS40LTM2NS0yLTE3LTIuNi0xOC42LTEzLTM0LTEwLjYtMTUuNC0yMi44LTI2LjItNDMuMi0zNy4yLTQuMi0yLjQtNjQuNi0yLjgtMzY2LTMuMi0xOTguNiAwLTM2NCAuNC0zNjcuNiAxLjR6Ii8+PC9zdmc+);
+    }
+    
+    
+    
+    
+    
+</style>
+
+        
+        <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #FF4081 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #FF4081;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #FF4081;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #FF4081;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg.png);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+
+
+        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==")</script>
+    
+    
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Analytics -->
+    
+
+    <!-- Custom Head -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#先上图"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">先上图</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#正文"><span class="post-toc-number">2.</span> <span class="post-toc-text">正文</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#直接上代码"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">直接上代码</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#详细"><span class="post-toc-number">3.</span> <span class="post-toc-text">详细</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#不同颜色、头像等处理"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">不同颜色、头像等处理</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#边界情况的处理"><span class="post-toc-number">3.0.2.</span> <span class="post-toc-text">边界情况的处理</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#对于各个箭头的处理"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">对于各个箭头的处理</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#最后"><span class="post-toc-number">4.</span> <span class="post-toc-text">最后</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                Android MPAndroidChart 自适应Markerview
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar_corner.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Jafir</strong>
+        <span>Jan 21, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/android/">android</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;Views
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Android MPAndroidChart 自适应Markerview&url=http://fly7632785.github.io/2018/01/21/android-MPAndroidChart-自适应Markerview/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Weibo
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Jafir&#39;s blog&title=Android MPAndroidChart 自适应Markerview&summary=what can&#39;t kill you makes you stronger&pics=http://fly7632785.github.io/img/avatar_corner.png&url=http://fly7632785.github.io/2018/01/21/android-MPAndroidChart-自适应Markerview/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>Android里面只要用过图表的应该都知道<a href="https://github.com/PhilJay/MPAndroidChart" target="_blank" rel="noopener">MPAndroidChart</a>这个库。这个库在iOS里面也有对应<a href="https://github.com/danielgindi/Charts" target="_blank" rel="noopener">Charts</a>，所以一般移动端做图表，Android和iOS两端都要实现同样的效果，他们是不错的一个选择。<br>但是，对于图表这种包含的情况非常复杂的东西，很难满足大家各种各样的需求，所以很多都需要自定义。下面就是给大家分享一下自己写的自适应MarkerView。</p>
+<h4 id="先上图"><a href="#先上图" class="headerlink" title="先上图"></a>先上图</h4><p><img src="http://upload-images.jianshu.io/upload_images/1311457-d5d185af3b7037e2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="正常居中显示"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1311457-84f1f978ac4211b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="超过左边界"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1311457-faa4dd3a11715f51.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="超过上边界"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1311457-e2e240b518251db1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="超过右边界"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1311457-6dcbf615e7957d05.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="超过上边界和右边界"></p>
+<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><p>要实现这样的效果，大家先想想怎么做？<br>这里的逻辑步骤分为：<br>1、创建新类继承自MarkerView<br>2、inflate layout进去<br>3、重写getOffsetForDrawingAtPoint ，分别处理各种边界情况的偏移<br>4、重写draw，绘制底色，根据不同的情况，绘制带箭头的对话框</p>
+<h5 id="直接上代码"><a href="#直接上代码" class="headerlink" title="直接上代码"></a>直接上代码</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br></pre></td><td class="code"><pre><span class="line">public class XYMarkerView extends MarkerView &#123;</span><br><span class="line">    public static final int ARROW_SIZE = 40; // 箭头的大小</span><br><span class="line">    private static final float CIRCLE_OFFSET = 10;//因为我这里的折点是圆圈，所以要偏移，防止直接指向了圆心</span><br><span class="line">    private static final float STOKE_WIDTH = 5;//这里对于stroke_width的宽度也要做一定偏移</span><br><span class="line">    private final TextView tvContent;</span><br><span class="line">    private final RoundImageView avatar;</span><br><span class="line">    private final TextView name;</span><br><span class="line">    private final List&lt;StepListModel&gt; stepListModels;</span><br><span class="line">    private int index;</span><br><span class="line">    private int oldIndex = -1;</span><br><span class="line"></span><br><span class="line">    public XYMarkerView(Context context, List&lt;StepListModel&gt; stepListModels) &#123;</span><br><span class="line">        super(context, R.layout.custom_marker_view);</span><br><span class="line">        tvContent = (TextView) findViewById(R.id.tvContent);</span><br><span class="line">        avatar = (RoundImageView) findViewById(R.id.avatar);</span><br><span class="line">        name = (TextView) findViewById(R.id.name);</span><br><span class="line">        this.stepListModels = stepListModels;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void refreshContent(Entry e, Highlight highlight) &#123;</span><br><span class="line">        super.refreshContent(e, highlight);</span><br><span class="line">        index = highlight.getDataSetIndex();//这个方法用于获得折线是哪根</span><br><span class="line">        tvContent.setText((int) e.getY() + &quot;&quot;);</span><br><span class="line">//            StepListModel stepListModel = stepListModels.get(highlight.getDataSetIndex() % Constants.battleUsersCount);</span><br><span class="line">//            name.setText(stepListModel.getNickNm());</span><br><span class="line">//            Glide.with(getContext())</span><br><span class="line">//                    .load(GlideUtil.getGlideUrl(stepListModel.getIconUrl()))</span><br><span class="line">//                    .into(avatar);</span><br><span class="line">        Glide.with(getContext())</span><br><span class="line">                .asBitmap()</span><br><span class="line">                .load(avatars[index % avatars.length])</span><br><span class="line">                .listener(new RequestListener&lt;Bitmap&gt;() &#123;</span><br><span class="line">                    @Override</span><br><span class="line">                    public boolean onLoadFailed(@Nullable GlideException e, Object model, Target&lt;Bitmap&gt; target, boolean isFirstResource) &#123;</span><br><span class="line">                        return false;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    @Override</span><br><span class="line">                    public boolean onResourceReady(Bitmap resource, Object model, Target&lt;Bitmap&gt; target, DataSource dataSource, boolean isFirstResource) &#123;</span><br><span class="line">                        if (resource != null) &#123;</span><br><span class="line">                            if (oldIndex != index) &#123;</span><br><span class="line">                                XYMarkerView.this.getChartView().invalidate();</span><br><span class="line">                                oldIndex = index;</span><br><span class="line">                            &#125;</span><br><span class="line">                            avatar.setImageBitmap(resource);</span><br><span class="line">                        &#125;</span><br><span class="line">                        return false;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;)</span><br><span class="line">                .into(avatar);</span><br><span class="line">        name.setText(highlight.getDataSetIndex() + &quot;&quot;);</span><br><span class="line">        tvContent.setTextColor(getResources().getColor(ColorUtil.colors[highlight.getDataSetIndex() % ColorUtil.colors.length]));</span><br><span class="line">        LogUtil.m(&quot;getDataSetIndex&quot; + highlight.getDataSetIndex());</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public MPPointF getOffsetForDrawingAtPoint(float posX, float posY) &#123;</span><br><span class="line">        MPPointF offset = getOffset();</span><br><span class="line">        Chart chart = getChartView();</span><br><span class="line">        float width = getWidth();</span><br><span class="line">        float height = getHeight();</span><br><span class="line">// posY \posX 指的是markerView左上角点在图表上面的位置</span><br><span class="line">//处理Y方向</span><br><span class="line">        if (posY &lt;= height + ARROW_SIZE) &#123;// 如果点y坐标小于markerView的高度，如果不处理会超出上边界，处理了之后这时候箭头是向上的，我们需要把图标下移一个箭头的大小</span><br><span class="line">            offset.y = ARROW_SIZE;</span><br><span class="line">        &#125; else &#123;//否则属于正常情况，因为我们默认是箭头朝下，然后正常偏移就是，需要向上偏移markerView高度和arrow size，再加一个stroke的宽度，因为你需要看到对话框的上面的边框</span><br><span class="line">            offset.y = -height - ARROW_SIZE - STOKE_WIDTH; // 40 arrow height   5 stroke width</span><br><span class="line">        &#125;</span><br><span class="line">//处理X方向，分为3种情况，1、在图表左边 2、在图表中间 3、在图表右边</span><br><span class="line">//</span><br><span class="line">        if (posX &gt; chart.getWidth() - width) &#123;//如果超过右边界，则向左偏移markerView的宽度</span><br><span class="line">            offset.x = -width;</span><br><span class="line">        &#125; else &#123;//默认情况，不偏移（因为是点是在左上角）</span><br><span class="line">            offset.x = 0;</span><br><span class="line">            if (posX &gt; width / 2) &#123;//如果大于markerView的一半，说明箭头在中间，所以向右偏移一半宽度</span><br><span class="line">                offset.x = -(width / 2);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return offset;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void draw(Canvas canvas, float posX, float posY) &#123;</span><br><span class="line">        Paint paint = new Paint();//绘制边框的画笔</span><br><span class="line">        paint.setStrokeWidth(STOKE_WIDTH);</span><br><span class="line">        paint.setStyle(Paint.Style.STROKE);</span><br><span class="line">        paint.setStrokeJoin(Paint.Join.ROUND);</span><br><span class="line">        paint.setColor(getResources().getColor(ColorUtil.colors[index % ColorUtil.colors.length]));</span><br><span class="line"></span><br><span class="line">        Paint whitePaint = new Paint();//绘制底色白色的画笔</span><br><span class="line">        whitePaint.setStyle(Paint.Style.FILL);</span><br><span class="line">        whitePaint.setColor(Color.WHITE);</span><br><span class="line"></span><br><span class="line">        Chart chart = getChartView();</span><br><span class="line">        float width = getWidth();</span><br><span class="line">        float height = getHeight();</span><br><span class="line"></span><br><span class="line">        MPPointF offset = getOffsetForDrawingAtPoint(posX, posY);</span><br><span class="line">        int saveId = canvas.save();</span><br><span class="line"></span><br><span class="line">        Path path = new Path();</span><br><span class="line">        if (posY &lt; height + ARROW_SIZE) &#123;//处理超过上边界</span><br><span class="line">            path = new Path();</span><br><span class="line">            path.moveTo(0, 0);</span><br><span class="line">            if (posX &gt; chart.getWidth() - width) &#123;//超过右边界</span><br><span class="line">                path.lineTo(width - ARROW_SIZE, 0);</span><br><span class="line">                path.lineTo(width, -ARROW_SIZE + CIRCLE_OFFSET);</span><br><span class="line">                path.lineTo(width, 0);</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                if (posX &gt; width / 2) &#123;//在图表中间</span><br><span class="line">                    path.lineTo(width / 2 - ARROW_SIZE / 2, 0);</span><br><span class="line">                    path.lineTo(width / 2, -ARROW_SIZE + CIRCLE_OFFSET);</span><br><span class="line">                    path.lineTo(width / 2 + ARROW_SIZE / 2, 0);</span><br><span class="line">                &#125; else &#123;//超过左边界</span><br><span class="line">                    path.lineTo(0, -ARROW_SIZE + CIRCLE_OFFSET);</span><br><span class="line">                    path.lineTo(0 + ARROW_SIZE, 0);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            path.lineTo(0 + width, 0);</span><br><span class="line">            path.lineTo(0 + width, 0 + height);</span><br><span class="line">            path.lineTo(0, 0 + height);</span><br><span class="line">            path.lineTo(0, 0);</span><br><span class="line">            path.offset(posX + offset.x, posY + offset.y);</span><br><span class="line">        &#125; else &#123;//没有超过上边界</span><br><span class="line">            path = new Path();</span><br><span class="line">            path.moveTo(0, 0);</span><br><span class="line">            path.lineTo(0 + width, 0);</span><br><span class="line">            path.lineTo(0 + width, 0 + height);</span><br><span class="line">            if (posX &gt; chart.getWidth() - width) &#123;</span><br><span class="line">                path.lineTo(width, height + ARROW_SIZE - CIRCLE_OFFSET);</span><br><span class="line">                path.lineTo(width - ARROW_SIZE, 0 + height);</span><br><span class="line">                path.lineTo(0, 0 + height);</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                if (posX &gt; width / 2) &#123;</span><br><span class="line">                    path.lineTo(width / 2 + ARROW_SIZE / 2, 0 + height);</span><br><span class="line">                    path.lineTo(width / 2, height + ARROW_SIZE - CIRCLE_OFFSET);</span><br><span class="line">                    path.lineTo(width / 2 - ARROW_SIZE / 2, 0 + height);</span><br><span class="line">                    path.lineTo(0, 0 + height);</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    path.lineTo(0 + ARROW_SIZE, 0 + height);</span><br><span class="line">                    path.lineTo(0, height + ARROW_SIZE - CIRCLE_OFFSET);</span><br><span class="line">                    path.lineTo(0, 0 + height);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            path.lineTo(0, 0);</span><br><span class="line">            path.offset(posX + offset.x, posY + offset.y);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // translate to the correct position and draw</span><br><span class="line">        canvas.drawPath(path, whitePaint);</span><br><span class="line">        canvas.drawPath(path, paint);</span><br><span class="line">        canvas.translate(posX + offset.x, posY + offset.y);</span><br><span class="line">        draw(canvas);</span><br><span class="line">        canvas.restoreToCount(saveId);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="详细"><a href="#详细" class="headerlink" title="详细"></a>详细</h3><h5 id="不同颜色、头像等处理"><a href="#不同颜色、头像等处理" class="headerlink" title="不同颜色、头像等处理"></a>不同颜色、头像等处理</h5><p>我这里的需求是根据不同的折线，显示不同的人物头像、名字和对应的值，并且对话框的颜色、字体都要对应折线的颜色。<br>所以，我这里根据<figure class="highlight plain"><figcaption><span>```就能处理不同颜色、头像等信息的情况。</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">//类似这个</span><br><span class="line"> name.setText(highlight.getDataSetIndex() + &quot;&quot;);</span><br><span class="line"> tvContent.setTextColor(getResources().getColor(ColorUtil.colors[highlight.getDataSetIndex() % ColorUtil.colors.length]));</span><br></pre></td></tr></table></figure></p>
+<p>注意：<br>这里有个地方要注意一下，这里如果你使用Glide来加载图片到ImageView里去，会出现第一次加载不出来头像，第二次点击的时候就加载出来了。<br>原因 ：是因为其实glide已经加载出来了，然后只是异步加载出来之后，已经是在layout绘制完成之后了，并没有进行invalidate的刷新。所以直到第二次的时候，其实glide已经加载过了，有缓存，所以直接就显示了，发生在draw方法之前，因为refreshContent就在draw之前调用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">// callbacks to update the content</span><br><span class="line">mMarker.refreshContent(e, highlight);</span><br><span class="line"></span><br><span class="line">// draw the marker</span><br><span class="line">mMarker.draw(canvas, pos[0], pos[1]);</span><br></pre></td></tr></table></figure></p>
+<p>我这里是直接在glide的onResourceReady里面调用chart的invalidate，但是这样的话会一直循环刷新了，卡死！<br>所以，这里使用了一个oldIndex是否等于index来判断是否是已经invalidate，这样的话就只有点击不同的折线的时候会invalidate一次，之后就不会了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">private int index;</span><br><span class="line">private int oldIndex = -1;</span><br><span class="line">...</span><br><span class="line">Glide.with(getContext())</span><br><span class="line">              .asBitmap()</span><br><span class="line">              .load(avatars[index % avatars.length])</span><br><span class="line">              .listener(new RequestListener&lt;Bitmap&gt;() &#123;</span><br><span class="line">                  @Override</span><br><span class="line">                  public boolean onLoadFailed(@Nullable GlideException e, Object model, Target&lt;Bitmap&gt; target, boolean isFirstResource) &#123;</span><br><span class="line">                      return false;</span><br><span class="line">                  &#125;</span><br><span class="line"></span><br><span class="line">                  @Override</span><br><span class="line">                  public boolean onResourceReady(Bitmap resource, Object model, Target&lt;Bitmap&gt; target, DataSource dataSource, boolean isFirstResource) &#123;</span><br><span class="line">                      if (resource != null) &#123;</span><br><span class="line">                          if (oldIndex != index) &#123;</span><br><span class="line">                              XYMarkerView.this.getChartView().invalidate();</span><br><span class="line">                              oldIndex = index;</span><br><span class="line">                          &#125;</span><br><span class="line">                          avatar.setImageBitmap(resource);</span><br><span class="line">                      &#125;</span><br><span class="line">                      return false;</span><br><span class="line">                  &#125;</span><br><span class="line">              &#125;)</span><br><span class="line">              .into(avatar);</span><br></pre></td></tr></table></figure></p>
+<h5 id="边界情况的处理"><a href="#边界情况的处理" class="headerlink" title="边界情况的处理"></a>边界情况的处理</h5><p>MarkerView的draw方法，里面有posX、posY，这个点坐标代表的是markerView的左上角的坐标（如果不偏移的情况下，官方的默认也是做了偏移处理的，但是还有不够完善）。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1311457-0fb26dedb2ee3beb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="默认是在左上角的，像这样"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line"> @Override</span><br><span class="line">    public void draw(Canvas canvas, float posX, float posY) &#123;</span><br><span class="line"></span><br><span class="line">        MPPointF offset = getOffsetForDrawingAtPoint(posX, posY);</span><br><span class="line"></span><br><span class="line">        int saveId = canvas.save();</span><br><span class="line">        // translate to the correct position and draw</span><br><span class="line">        canvas.translate(posX + offset.x, posY + offset.y);</span><br><span class="line">        draw(canvas);</span><br><span class="line">        canvas.restoreToCount(saveId);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>下面是我对各种边界情况的处理<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">     @Override</span><br><span class="line">    public MPPointF getOffsetForDrawingAtPoint(float posX, float posY) &#123;</span><br><span class="line">        MPPointF offset = getOffset();</span><br><span class="line">        Chart chart = getChartView();</span><br><span class="line">        float width = getWidth();</span><br><span class="line">        float height = getHeight();</span><br><span class="line">// posY \posX 指的是markerView左上角点在图表上面的位置</span><br><span class="line">//处理Y方向</span><br><span class="line">        if (posY &lt;= height + ARROW_SIZE) &#123;// 如果点y坐标小于markerView的高度，如果不处理会超出上边界，处理了之后这时候箭头是向上的，我们需要把图标下移一个箭头的大小</span><br><span class="line">            offset.y = ARROW_SIZE;</span><br><span class="line">        &#125; else &#123;//否则属于正常情况，因为我们默认是箭头朝下，然后正常偏移就是，需要向上偏移markerView高度和arrow size，再加一个stroke的宽度，因为你需要看到对话框的上面的边框</span><br><span class="line">            offset.y = -height - ARROW_SIZE - STOKE_WIDTH; // 40 arrow height   5 stroke width</span><br><span class="line">        &#125;</span><br><span class="line">//处理X方向，分为3种情况，1、在图表左边 2、在图表中间 3、在图表右边</span><br><span class="line">//</span><br><span class="line">        if (posX &gt; chart.getWidth() - width) &#123;//如果超过右边界，则向左偏移markerView的宽度</span><br><span class="line">            offset.x = -width;</span><br><span class="line">        &#125; else &#123;//默认情况，不偏移（因为是点是在左上角）</span><br><span class="line">            offset.x = 0;</span><br><span class="line">            if (posX &gt; width / 2) &#123;//如果大于markerView的一半，说明箭头在中间，所以向右偏移一半宽度</span><br><span class="line">                offset.x = -(width / 2);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return offset;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1311457-a9f533f780593dcd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="处理左边界"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1311457-c786c8d1e97c52ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="处理一般情况"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1311457-ca258b7c1f605dfc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="处理上边界"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1311457-61b9d9ab08f5a30e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="处理右边界"></p>
+<h4 id="对于各个箭头的处理"><a href="#对于各个箭头的处理" class="headerlink" title="对于各个箭头的处理"></a>对于各个箭头的处理</h4><p>实现这个对话框，主要是通过绘制path来实现的，箭头的处理也是根据不同的情况，进行不同的path绘制实现的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">   public void draw(Canvas canvas, float posX, float posY) &#123;</span><br><span class="line">       Paint paint = new Paint();//绘制边框的画笔</span><br><span class="line">       paint.setStrokeWidth(STOKE_WIDTH);</span><br><span class="line">       paint.setStyle(Paint.Style.STROKE);</span><br><span class="line">       paint.setStrokeJoin(Paint.Join.ROUND);</span><br><span class="line">       paint.setColor(getResources().getColor(ColorUtil.colors[index % ColorUtil.colors.length]));</span><br><span class="line"></span><br><span class="line">       Paint whitePaint = new Paint();//绘制底色白色的画笔</span><br><span class="line">       whitePaint.setStyle(Paint.Style.FILL);</span><br><span class="line">       whitePaint.setColor(Color.WHITE);</span><br><span class="line"></span><br><span class="line">       Chart chart = getChartView();</span><br><span class="line">       float width = getWidth();</span><br><span class="line">       float height = getHeight();</span><br><span class="line"></span><br><span class="line">       MPPointF offset = getOffsetForDrawingAtPoint(posX, posY);</span><br><span class="line">       int saveId = canvas.save();</span><br><span class="line"></span><br><span class="line">       Path path = new Path();</span><br><span class="line">       if (posY &lt; height + ARROW_SIZE) &#123;//处理超过上边界</span><br><span class="line">           path = new Path();</span><br><span class="line">           path.moveTo(0, 0);</span><br><span class="line">           if (posX &gt; chart.getWidth() - width) &#123;//超过右边界</span><br><span class="line">               path.lineTo(width - ARROW_SIZE, 0);</span><br><span class="line">               path.lineTo(width, -ARROW_SIZE + CIRCLE_OFFSET);</span><br><span class="line">               path.lineTo(width, 0);</span><br><span class="line">           &#125; else &#123;</span><br><span class="line">               if (posX &gt; width / 2) &#123;//在图表中间</span><br><span class="line">                   path.lineTo(width / 2 - ARROW_SIZE / 2, 0);</span><br><span class="line">                   path.lineTo(width / 2, -ARROW_SIZE + CIRCLE_OFFSET);</span><br><span class="line">                   path.lineTo(width / 2 + ARROW_SIZE / 2, 0);</span><br><span class="line">               &#125; else &#123;//超过左边界</span><br><span class="line">                   path.lineTo(0, -ARROW_SIZE + CIRCLE_OFFSET);</span><br><span class="line">                   path.lineTo(0 + ARROW_SIZE, 0);</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">           path.lineTo(0 + width, 0);</span><br><span class="line">           path.lineTo(0 + width, 0 + height);</span><br><span class="line">           path.lineTo(0, 0 + height);</span><br><span class="line">           path.lineTo(0, 0);</span><br><span class="line">           path.offset(posX + offset.x, posY + offset.y);</span><br><span class="line">       &#125; else &#123;//没有超过上边界</span><br><span class="line">           path = new Path();</span><br><span class="line">           path.moveTo(0, 0);</span><br><span class="line">           path.lineTo(0 + width, 0);</span><br><span class="line">           path.lineTo(0 + width, 0 + height);</span><br><span class="line">           if (posX &gt; chart.getWidth() - width) &#123;</span><br><span class="line">               path.lineTo(width, height + ARROW_SIZE - CIRCLE_OFFSET);</span><br><span class="line">               path.lineTo(width - ARROW_SIZE, 0 + height);</span><br><span class="line">               path.lineTo(0, 0 + height);</span><br><span class="line">           &#125; else &#123;</span><br><span class="line">               if (posX &gt; width / 2) &#123;</span><br><span class="line">                   path.lineTo(width / 2 + ARROW_SIZE / 2, 0 + height);</span><br><span class="line">                   path.lineTo(width / 2, height + ARROW_SIZE - CIRCLE_OFFSET);</span><br><span class="line">                   path.lineTo(width / 2 - ARROW_SIZE / 2, 0 + height);</span><br><span class="line">                   path.lineTo(0, 0 + height);</span><br><span class="line">               &#125; else &#123;</span><br><span class="line">                   path.lineTo(0 + ARROW_SIZE, 0 + height);</span><br><span class="line">                   path.lineTo(0, height + ARROW_SIZE - CIRCLE_OFFSET);</span><br><span class="line">                   path.lineTo(0, 0 + height);</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">           path.lineTo(0, 0);</span><br><span class="line">           path.offset(posX + offset.x, posY + offset.y);</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       // translate to the correct position and draw</span><br><span class="line">       canvas.drawPath(path, whitePaint);</span><br><span class="line">       canvas.drawPath(path, paint);</span><br><span class="line">       canvas.translate(posX + offset.x, posY + offset.y);</span><br><span class="line">       draw(canvas);</span><br><span class="line">       canvas.restoreToCount(saveId);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+<p>绘制MarkerView分为两部分，一部分是绘制对话框，一部分是绘制传入的R.layout.xx的view。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1311457-6955c8a84ac1ddb2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="类似这样"></p>
+<p>这里有一个问题，就是需要填充对话框白色，并且还要有边框。<br>一个画笔是不够的，所以这里有两个画笔，一个是填充的，一个是画边框的。<br>并且，是必须要先绘制对话框的底色，绘制对话框，再绘制传入的view<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Paint paint = new Paint();//绘制边框的画笔</span><br><span class="line">     paint.setStrokeWidth(STOKE_WIDTH);</span><br><span class="line">     paint.setStyle(Paint.Style.STROKE);</span><br><span class="line">     paint.setStrokeJoin(Paint.Join.ROUND);</span><br><span class="line">     paint.setColor(getResources().getColor(ColorUtil.colors[index % ColorUtil.colors.length]));</span><br><span class="line"></span><br><span class="line">     Paint whitePaint = new Paint();//绘制底色白色的画笔</span><br><span class="line">     whitePaint.setStyle(Paint.Style.FILL);</span><br><span class="line">     whitePaint.setColor(Color.WHITE);</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 第一步        canvas.drawPath(path, whitePaint); </span><br><span class="line">// 第二步        canvas.drawPath(path, paint); </span><br><span class="line">                canvas.translate(posX + offset.x, posY + offset.y); </span><br><span class="line">// 第三步        draw(canvas);</span><br></pre></td></tr></table></figure>
+<p>因为我们的markerView偏移是对于canvas的偏移，但是我们的对话框的path并没有偏移，所以我们也要对path进行同样的偏移处理。很简单，直接获取偏移值，然后偏移就好。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> MPPointF offset = getOffsetForDrawingAtPoint(posX, posY);</span><br><span class="line">path.offset(posX + offset.x, posY + offset.y);</span><br></pre></td></tr></table></figure></p>
+<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>这样的最终效果就是传入的layout 被对话框包裹在里面了。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1311457-bfbfff71ab2aeb8f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>箭头的绘制处理也比较简单，就是根据不同的情况来进行绘制就好，看代码吧。</p>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/01/21/解决NestedScrollView包裹横向RecyclerView导致behavior回调方法没有执行及源码分析/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Newer
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/01/21/android-OTG-读取usb设备文件并上传（问题解决）/" id="post_nav-older" class="next-content">
+            Older
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar_corner.png" alt="Jafir's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        522648467@qq.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto:522648467@qq.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="http://www.jianshu.com/u/d234d1569eed" target="_blank" title="Jianshu">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">date_range</i>
+                        
+                        Jianshu
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://github.com/fly7632785" target="_blank" title="Github">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">group_work</i>
+                        
+                        Github
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                Home
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    Archives
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">February 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">January 2018<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">February 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">January 2017<span class="sidebar_archives-count">3</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            Theme - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/fly7632785" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Jafir's blog
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+
+    <script>lsloader.load("js/lazyload.min.js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==")</script>
+    <script>lsloader.load("js/js.min.js","/js/js.min.js?oAl/+lvaqTFV31JXTmbrNA==")</script>
+
+
+
+    <script>lsloader.load("js/nprogress.js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==")</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#FF4081'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #FF4081, 0 0 15px #FF4081'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#FF4081',
+        'border-left-color': '#FF4081'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Window Load-->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Bing Background -->
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
